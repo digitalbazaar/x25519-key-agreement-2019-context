@@ -1,10 +1,10 @@
-# Context Template Repository _(context-template)_
+# X25519 2019 Crypto Suite Context Repository _(x25519-key-agreement-2019-context)_
 
-[![Build status](https://img.shields.io/github/workflow/status/digitalbazaar/context-template/Node.js%20CI)](https://github.com/digitalbazaar/context-template/actions?query=workflow%3A%22Node.js+CI%22)
-[![Coverage status](https://img.shields.io/codecov/c/github/digitalbazaar/context-template)](https://codecov.io/gh/digitalbazaar/context-template)
-[![NPM Version](https://img.shields.io/npm/v/context-template.svg)](https://npm.im/context-template)
+[![Build status](https://img.shields.io/github/workflow/status/digitalbazaar/x25519-key-agreement-2019-context/Node.js%20CI)](https://github.com/digitalbazaar/x25519-key-agreement-2019-context/actions?query=workflow%3A%22Node.js+CI%22)
+[![Coverage status](https://img.shields.io/codecov/c/github/digitalbazaar/x25519-key-agreement-2019-context)](https://codecov.io/gh/digitalbazaar/x25519-key-agreement-2019-context)
+[![NPM Version](https://img.shields.io/npm/v/x25519-key-agreement-2019-context.svg)](https://npm.im/x25519-key-agreement-2019-context)
 
-> A GitHub template repository for JSON-LD contexts.
+> JSON-LD Context for the X25519 2019 Crypto suite.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@
 
 See also (related specs):
 
-*
+* [Multibase](https://github.com/multiformats/multibase)
 
 ## Install
 
@@ -28,26 +28,22 @@ Requires Node.js 12+
 To install via NPM:
 
 ```
-npm install context-template
+npm install x25519-key-agreement-2019-context
 ```
 
 ## Usage
 
 ```js
-import exampleCtx from 'context-template';
+import x25519Context2019 from 'x25519-key-agreement-2019-context';
 // or
-const exampleCtx = require('context-template');
-const {contexts, constants, appContextMap} = exampleCtx;
+const x25519Context2019 = require('x25519-key-agreement-2019-context');
+const {contexts, constants} = x25519Context2019;
 
-exampleCtx.CONTEXT_URL
-// 'https://w3id.org/example/v1'
-
-// Codec term map value for CBOR-LD
-exampleCtx.constants.CBORLD_CODEC_VALUE
-// 0x0..
+x25519Context2019.CONTEXT_URL_V1
+// 'http://w3id.org/security/suites/x25519-2019/v1'
 
 // get context data for a specific context
-exampleCtx.CONTEXT
+x25519Context2019.CONTEXT_V1
 // full context object
 ```
 
@@ -57,12 +53,11 @@ applications.
 ## API
 
 The library exports the following properties:
-- `CONTEXT_URL` and `CONTEXT` (it's recommended that context repositories only export one context).
+- `CONTEXT_URL_V1` and `CONTEXT_V1`.
 - `constants`: A Object that maps constants to well-known context URLs. The
-  main constant `CONTEXT_URL` may be updated from time to time to the
+  main constant `CONTEXT_URL_V1` may be updated from time to time to the
   latest context location.
 - `contexts`: A `Map` that maps URLs to full context data.
-- `appContextMap`: For use with `cborld` library.
 
 ## Developing
 
